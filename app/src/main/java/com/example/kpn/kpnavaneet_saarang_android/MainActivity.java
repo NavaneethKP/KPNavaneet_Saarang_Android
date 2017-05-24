@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> cord = new ArrayList<String>();
     ArrayList<String> ph = new ArrayList<String>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
             }
             else
             {
@@ -101,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 loc.remove("CRC 101"); loc.remove("CRC 101");
                 cord.remove(getString(R.string.c1)); cord.remove(getString(R.string.c2));
                 ph.remove("9790469683");   ph.remove("9790469683");
+
             }
                 break;
 
@@ -113,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 loc.add("Fine Arts Hut"); loc.add("Fine Arts Hut");
                 cord.add(getString(R.string.c3)); cord.add(getString(R.string.c4));
                 ph.add("9176492387"); ph.add("9003033685");
+
             }
             else
             {
@@ -123,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 loc.remove("Fine Arts Hut"); loc.remove("Fine Arts Hut");
                 cord.remove(getString(R.string.c3)); cord.remove(getString(R.string.c4));
                 ph.remove("9176492387"); ph.remove("9003033685");
+
             }
                 break;
 
@@ -135,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 loc.add("KV Grounds"); loc.add("KV Grounds");
                 cord.add(getString(R.string.c5)); cord.add(getString(R.string.c6));
                 ph.add("9789855067");   ph.add("9500158866");
+
             }
             else
             {
@@ -145,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 loc.remove("KV Grounds"); loc.remove("KV Grounds");
                 cord.remove(getString(R.string.c5)); cord.remove(getString(R.string.c6));
                 ph.remove("9789855067");   ph.remove("9500158866");
+
 
             }
                 break;

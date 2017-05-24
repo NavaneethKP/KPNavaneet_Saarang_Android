@@ -20,7 +20,25 @@
             android:id="@+id/rel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="50dp">
+            android:paddingBottom="90dp">
+
+            <ImageButton
+                android:id="@+id/mailbutton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/categorytext"
+                android:background="@drawable/index" />
+
+            <ImageButton
+                android:id="@+id/callbutton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/cordtext"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/call"
+                android:layout_alignParentBottom="true" />
 
             <Button
                 android:id="@+id/regbutton"
@@ -91,10 +109,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/textView8"
+                android:layout_alignTop="@+id/textView8"
                 android:layout_toEndOf="@+id/textView6"
                 android:text="TextView"
-                android:textSize="18sp"
-                android:layout_alignTop="@+id/textView8" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -131,22 +149,11 @@
                 android:id="@+id/cordtext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textView12"
                 android:text="TextView"
                 android:textSize="18sp"
-                android:layout_below="@+id/textView12"
-                android:layout_alignStart="@+id/textView12"
-                android:layout_alignEnd="@+id/descriptiontext" />
-
-            <ImageButton
-                android:id="@+id/callbutton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/call"
-                android:maxHeight="50dp"
-                android:maxWidth="50dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/regbutton"
-                android:layout_marginStart="27dp" />
+                android:layout_alignEnd="@+id/textView12"
+                android:layout_below="@+id/textView12" />
 
         </RelativeLayout>
     </ScrollView>
