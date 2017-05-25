@@ -41,6 +41,9 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         TextView text= (TextView) rowview.findViewById(R.id.text);
         text.setText(string.get(position));
         ImageView image = (ImageView) rowview.findViewById(R.id.image);
+
+        //Giving the image resource for the list item according to the user's choice and order.
+
         if(string.size()!=1)
         {
             switch(string.get(position))

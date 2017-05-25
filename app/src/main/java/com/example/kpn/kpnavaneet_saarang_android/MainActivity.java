@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 //Declaring the array list for storing the data according to user's choice .
 
     ArrayList<String> string = new ArrayList<String>();
-
     ArrayList<String> category = new ArrayList<String>();
     ArrayList<String> des = new ArrayList<String>();
     ArrayList<String> sch = new ArrayList<String>();
@@ -40,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         if(string.isEmpty())
             string.add("Nothing to show");
 
-
-
         Intent i = new Intent(this,events.class);
         Bundle extras = new Bundle();
         extras.putStringArrayList("eventname",string);
@@ -51,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         extras.putStringArrayList("location",loc);
         extras.putStringArrayList("contact",cord);
         extras.putStringArrayList("phone",ph);
-
         i.putExtras(extras);
         startActivity(i);
 
@@ -154,9 +150,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
-
-
 
 }
 

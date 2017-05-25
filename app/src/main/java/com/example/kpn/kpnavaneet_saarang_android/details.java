@@ -18,8 +18,6 @@ import android.widget.Toast;
 
 public class details extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +27,7 @@ public class details extends AppCompatActivity {
 
         final Intent i = getIntent();
         Bundle b = i.getExtras();
+
         if (b != null) {
             final String s = i.getStringExtra("category");
             String des = i.getStringExtra("description");
@@ -83,7 +82,6 @@ public class details extends AppCompatActivity {
 
                     try {
                         startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-                        finish();
 
                     } catch (android.content.ActivityNotFoundException ex) {
                         Toast.makeText(details.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();

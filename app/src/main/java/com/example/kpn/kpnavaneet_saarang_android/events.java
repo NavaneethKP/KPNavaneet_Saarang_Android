@@ -16,15 +16,16 @@ public class events extends AppCompatActivity {
 
         ArrayList<String> eventname= new ArrayList<String>();
         ArrayList<String> category= new ArrayList<String>();
-         ArrayList<String> des= new ArrayList<String>();
-         ArrayList<String> sch= new ArrayList<String>();
+        ArrayList<String> des= new ArrayList<String>();
+        ArrayList<String> sch= new ArrayList<String>();
         ArrayList<String> loc= new ArrayList<String>();
         ArrayList<String> contact= new ArrayList<String>();
-         ArrayList<String> ph= new ArrayList<String>();
+        ArrayList<String> ph= new ArrayList<String>();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
+       //Getting the values for details from list events activity .
 
         Intent i = getIntent();
         eventname = i.getStringArrayListExtra("eventname");
@@ -34,10 +35,14 @@ public class events extends AppCompatActivity {
         loc=i.getStringArrayListExtra("location");
         contact = i.getStringArrayListExtra("contact");
         ph = i.getStringArrayListExtra("phone");
+
+        //Adapter used to convert the eventname and image into a list item .
+
         CustomListAdapter adapter = new CustomListAdapter(this,R.layout.mylist,eventname);
         ListView list = (ListView) findViewById(R.id.list);
         list.setAdapter(adapter);
 
+        //final variables created in order to be used in OnItemClickListener method
 
         final ArrayList<String> finalCategory = category;
         final ArrayList<String> finaldes = des;
@@ -46,12 +51,15 @@ public class events extends AppCompatActivity {
         final ArrayList<String> finalcontact = contact;
         final ArrayList<String> finalph = ph;
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //OnItemClickListener method which leads to the details activity .
 
-            String categ,des,sch,loc,contact,ph;
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //Wrapping all the event details as a Bundle and sending to the
+                //details activity
 
                 Intent i = new Intent(events.this,details.class);
                 Bundle extras = new Bundle();
@@ -65,15 +73,6 @@ public class events extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
-    }
-
-    public void changepreferance(View view)
-    {
-
-
-
 
 
     }
