@@ -23,12 +23,20 @@
             android:paddingBottom="90dp">
 
             <ImageButton
+                android:id="@+id/calendar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/calendar"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/mailbutton" />
+
+            <ImageButton
                 android:id="@+id/mailbutton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:background="@drawable/index"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/categorytext"
-                android:background="@drawable/index" />
+                android:layout_alignStart="@+id/locationtext" />
 
             <ImageButton
                 android:id="@+id/callbutton"
@@ -147,13 +155,13 @@
 
             <TextView
                 android:id="@+id/cordtext"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/textView12"
+                android:layout_below="@+id/textView12"
+                android:isScrollContainer="true"
                 android:text="TextView"
-                android:textSize="18sp"
-                android:layout_alignEnd="@+id/textView12"
-                android:layout_below="@+id/textView12" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
     </ScrollView>

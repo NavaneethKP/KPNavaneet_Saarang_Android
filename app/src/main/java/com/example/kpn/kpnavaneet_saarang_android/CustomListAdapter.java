@@ -1,20 +1,19 @@
 package com.example.kpn.kpnavaneet_saarang_android;
 
 import android.content.Context;
-        import android.support.annotation.LayoutRes;
-        import android.support.annotation.NonNull;
-        import android.support.annotation.Nullable;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.ArrayAdapter;
-        import android.widget.TextView;
+import android.support.annotation.ArrayRes;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
 
-        import java.util.ArrayList;
-
-/**
- * Created by kpn on 24/5/17.
- */
 
 public class CustomListAdapter extends ArrayAdapter<String> {
 
@@ -22,13 +21,16 @@ public class CustomListAdapter extends ArrayAdapter<String> {
     private final Context context;
 
 
+//Constructor for the class .
+
     public CustomListAdapter(@NonNull Context context, @LayoutRes int resource,ArrayList string) {
         super(context, resource,string);
         this.context=context;
         this.string=string;
 
-
     }
+
+//Override method to inflate each of the rows with the list item and also set an image .
 
     @NonNull
     @Override
@@ -38,11 +40,10 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         View rowview = inflater.inflate(R.layout.mylist,parent,false);
         TextView text= (TextView) rowview.findViewById(R.id.text);
         text.setText(string.get(position));
+        ImageView image = (ImageView) rowview.findViewById(R.id.image);
+        if(string.get(position)!="Nothing to show")
+        image.setImageResource(R.drawable.images);
         return rowview;
-
-
-
-
     }
 }
 

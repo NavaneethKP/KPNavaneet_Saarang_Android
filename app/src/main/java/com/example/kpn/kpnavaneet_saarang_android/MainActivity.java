@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+//Declaring the array list for storing the data according to user's choice .
+
     ArrayList<String> string = new ArrayList<String>();
     ArrayList<String> category = new ArrayList<String>();
     ArrayList<String> des = new ArrayList<String>();
@@ -28,24 +30,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+//onClick method to display the events for respective categories chosen by the user.
 
     public void buttonclick(View view)
     {
+        //To show nothing if user does not check any of the boxes .
+
         if(string.isEmpty())
             string.add("Nothing to show");
+
+        //Creating an object for the CustomListAdapter class.
 
         CustomListAdapter adapter = new CustomListAdapter(this,R.layout.mylist,string);
         ListView list = (ListView) findViewById(R.id.list);
         list.setAdapter(adapter);
 
-        if(string.size()==1)
-        {
-            list.setActivated(true);
-        }
-        else {
+        //OnItemClickListener method
+        //Clicking a list item displays the details in a new activity .
+        //The data according to user's choice has been passed as extras.
 
-
-            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                   list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     if(string.size()!=1) {
@@ -64,20 +68,26 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-        }
+
 
 
     }
 
+    //The onClick method for the checboxes .
+
     public void category(View view)
     {
+        //To clear "Nothing to show" if the user selects an option .
+
         if(string.size()==1){
             string.clear();
-           /* category.clear();
-            des.clear();*/
+
         }
 
         boolean checked = ((CheckBox) view).isChecked();
+
+        //switch case statements to assign data to the ArrayList<> as checked by the user .
+
         switch(view.getId())
         {
             case R.id.c1:if(checked)
@@ -90,9 +100,6 @@ public class MainActivity extends AppCompatActivity {
                 cord.add(getString(R.string.c1)); cord.add(getString(R.string.c2));
                 ph.add("9790469683");   ph.add("9790469683");
 
-
-
-
             }
             else
             {
@@ -103,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                 loc.remove("CRC 101"); loc.remove("CRC 101");
                 cord.remove(getString(R.string.c1)); cord.remove(getString(R.string.c2));
                 ph.remove("9790469683");   ph.remove("9790469683");
-
             }
                 break;
 
@@ -134,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.c3:if(checked)
             {
                 string.add("FIFA");string.add("DOTA 2");
-                category.add("FIFA"); category.add("DOTA 2");
+                category.add("Gaming"); category.add("Gaming");
                 des.add(getString(R.string.Fifa)); des.add(getString(R.string.Dota));
                 sch.add("2017-01-08 , 10:30 AM");sch.add("2017-01-07 , 10:30 AM");
                 loc.add("KV Grounds"); loc.add("KV Grounds");
@@ -145,13 +151,12 @@ public class MainActivity extends AppCompatActivity {
             else
             {
                 string.remove("FIFA");string.remove("DOTA 2");
-                category.remove("FIFA"); category.remove("DOTA 2");
+                category.remove("Gaming"); category.remove("Gaming");
                 des.remove(getString(R.string.Fifa)); des.remove(getString(R.string.Dota));
                 sch.remove("2017-01-08 , 10:30 AM");sch.remove("2017-01-07 , 10:30 AM");
                 loc.remove("KV Grounds"); loc.remove("KV Grounds");
                 cord.remove(getString(R.string.c5)); cord.remove(getString(R.string.c6));
                 ph.remove("9789855067");   ph.remove("9500158866");
-
 
             }
                 break;

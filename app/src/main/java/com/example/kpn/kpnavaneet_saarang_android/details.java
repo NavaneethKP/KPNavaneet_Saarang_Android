@@ -3,7 +3,11 @@ package com.example.kpn.kpnavaneet_saarang_android;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.icu.util.Calendar;
 import android.net.Uri;
+import android.os.Build;
+import android.provider.CalendarContract;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,10 +25,12 @@ public class details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        Intent i = getIntent();
+        //Intent from class mainActivity that displays the details of the event.
+
+        final Intent i = getIntent();
         Bundle b = i.getExtras();
         if (b != null) {
-            String s = i.getStringExtra("category");
+            final String s = i.getStringExtra("category");
             String des = i.getStringExtra("description");
             String sch = i.getStringExtra("schedule");
             String loc = i.getStringExtra("location");
@@ -41,6 +47,8 @@ public class details extends AppCompatActivity {
             TextView cordtext = (TextView) findViewById(R.id.cordtext);
             cordtext.setText(c);
 
+            //onClickListener method for the call the coordinator functionality
+
             ImageButton callbutton = (ImageButton) findViewById(R.id.callbutton);
             callbutton.setOnClickListener(new ImageButton.OnClickListener() {
                 @Override
@@ -55,6 +63,8 @@ public class details extends AppCompatActivity {
 
                 }
             });
+
+            //onClickListener method to allow user to send mails to the coordinator .
 
             ImageButton mailbutton= (ImageButton) findViewById(R.id.mailbutton);
             mailbutton.setOnClickListener(new ImageButton.OnClickListener() {
@@ -81,18 +91,48 @@ public class details extends AppCompatActivity {
                 }
             });
 
+            //onClickListener method to allow user to add the event to the calendar .
+
+            ImageButton calendar = (ImageButton) findViewById(R.id.calendar);
+            calendar.setOnClickListener(new ImageButton.OnClickListener() {
+
+
+                @Override
+                public void onClick(View v) {
+
+                    Calendar cal = null;
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        cal = Calendar.getInstance();
+                    }
+                    Intent intent = new Intent(Intent.ACTION_EDIT);
+                        intent.setType("vnd.android.cursor.item/event");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        intent.putExtra("beginTime", cal.getTimeInMillis());
+                    }
+                    intent.putExtra("allDay", true);
+                        intent.putExtra("rrule", "FREQ=YEARLY");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
+                    }
+                    intent.putExtra("title", s);
+                        startActivity(intent);
+
+
+                }
+            });
+
+
         }
 
     }
+
+    //onClick method for the Register button
+    //on clicking button goes to another activity .
 
     public void register(View view)
     {
         Intent i = new Intent(this,register.class);
         startActivity(i);
     }
-
-
-
-
 
 }

@@ -12,9 +12,11 @@ public class register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
         Intent i = getIntent();
     }
+
+   //onClick method for the confirm register button
+   //Displays a Toast for the confirmation .
 
     public void save(View view)
     {
