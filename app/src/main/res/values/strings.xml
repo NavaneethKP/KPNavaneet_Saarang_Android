@@ -49,4 +49,6 @@
     <string name="ph4">9445125963</string>
     <string name="ph5">7401205049</string>
     <string name="ph6">967741567</string>
+    <string name="events">EVENTS</string>
+    <string name="change">CHANGE PREFERENCE</string>
 </resources>

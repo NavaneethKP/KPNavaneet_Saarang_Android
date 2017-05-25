@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 //Declaring the array list for storing the data according to user's choice .
 
     ArrayList<String> string = new ArrayList<String>();
+
     ArrayList<String> category = new ArrayList<String>();
     ArrayList<String> des = new ArrayList<String>();
     ArrayList<String> sch = new ArrayList<String>();
@@ -34,42 +35,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonclick(View view)
     {
-        //To show nothing if user does not check any of the boxes .
+
 
         if(string.isEmpty())
             string.add("Nothing to show");
 
-        //Creating an object for the CustomListAdapter class.
-
-        CustomListAdapter adapter = new CustomListAdapter(this,R.layout.mylist,string);
-        ListView list = (ListView) findViewById(R.id.list);
-        list.setAdapter(adapter);
-
-        //OnItemClickListener method
-        //Clicking a list item displays the details in a new activity .
-        //The data according to user's choice has been passed as extras.
-
-                   list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    if(string.size()!=1) {
-                        Intent i = new Intent(MainActivity.this, details.class);
-                        Bundle extras = new Bundle();
-                        extras.putString("category", category.get(position));
-                        extras.putString("description", des.get(position));
-                        extras.putString("schedule",sch.get(position));
-                        extras.putString("location",loc.get(position));
-                        extras.putString("contact",cord.get(position));
-                        extras.putString("phone",ph.get(position));
-                        i.putExtras(extras);
-                        startActivity(i);
-                    }
 
 
-                }
-            });
+        Intent i = new Intent(this,events.class);
+        Bundle extras = new Bundle();
+        extras.putStringArrayList("eventname",string);
+        extras.putStringArrayList("category",category);
+        extras.putStringArrayList("description",des);
+        extras.putStringArrayList("schedule",sch);
+        extras.putStringArrayList("location",loc);
+        extras.putStringArrayList("contact",cord);
+        extras.putStringArrayList("phone",ph);
 
-
+        i.putExtras(extras);
+        startActivity(i);
 
     }
 
@@ -100,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 cord.add(getString(R.string.c1)); cord.add(getString(R.string.c2));
                 ph.add("9790469683");   ph.add("9790469683");
 
+
             }
             else
             {
@@ -110,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 loc.remove("CRC 101"); loc.remove("CRC 101");
                 cord.remove(getString(R.string.c1)); cord.remove(getString(R.string.c2));
                 ph.remove("9790469683");   ph.remove("9790469683");
+
             }
                 break;
 
@@ -123,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 cord.add(getString(R.string.c3)); cord.add(getString(R.string.c4));
                 ph.add("9176492387"); ph.add("9003033685");
 
+
             }
             else
             {
@@ -134,12 +121,13 @@ public class MainActivity extends AppCompatActivity {
                 cord.remove(getString(R.string.c3)); cord.remove(getString(R.string.c4));
                 ph.remove("9176492387"); ph.remove("9003033685");
 
+
             }
                 break;
 
             case R.id.c3:if(checked)
             {
-                string.add("FIFA");string.add("DOTA 2");
+                string.add("FIFA tournament");string.add("DOTA 2 tournament");
                 category.add("Gaming"); category.add("Gaming");
                 des.add(getString(R.string.Fifa)); des.add(getString(R.string.Dota));
                 sch.add("2017-01-08 , 10:30 AM");sch.add("2017-01-07 , 10:30 AM");
@@ -147,16 +135,18 @@ public class MainActivity extends AppCompatActivity {
                 cord.add(getString(R.string.c5)); cord.add(getString(R.string.c6));
                 ph.add("9789855067");   ph.add("9500158866");
 
+
             }
             else
             {
-                string.remove("FIFA");string.remove("DOTA 2");
+                string.remove("FIFA tournament");string.remove("DOTA 2 tournament");
                 category.remove("Gaming"); category.remove("Gaming");
                 des.remove(getString(R.string.Fifa)); des.remove(getString(R.string.Dota));
                 sch.remove("2017-01-08 , 10:30 AM");sch.remove("2017-01-07 , 10:30 AM");
                 loc.remove("KV Grounds"); loc.remove("KV Grounds");
                 cord.remove(getString(R.string.c5)); cord.remove(getString(R.string.c6));
                 ph.remove("9789855067");   ph.remove("9500158866");
+
 
             }
                 break;

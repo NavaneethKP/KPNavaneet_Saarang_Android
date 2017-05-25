@@ -24,30 +24,32 @@
         android:id="@+id/c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="22dp"
         android:onClick="category"
         android:text="Quizzing"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <CheckBox
         android:id="@+id/c2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/c1"
-        android:layout_below="@+id/c1"
         android:onClick="category"
-        android:text="Fine Arts" />
+        android:text="Fine Arts"
+        android:layout_below="@+id/c1"
+        android:layout_alignStart="@+id/c1"
+        android:layout_marginTop="18dp" />
 
     <CheckBox
         android:id="@+id/c3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/c2"
-        android:layout_below="@+id/c2"
         android:onClick="category"
-        android:text="Gaming" />
+        android:text="Gaming"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/c2"
+        android:layout_alignEnd="@+id/c2"
+        android:layout_alignStart="@+id/c2" />
 
     <Button
         android:id="@+id/button"
@@ -55,16 +57,9 @@
         android:layout_height="wrap_content"
         android:onClick="buttonclick"
         android:text="View Events"
-        android:layout_alignBottom="@+id/c2"
-        android:layout_toEndOf="@+id/c2"
-        android:layout_marginStart="48dp" />
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/c3"
+        android:layout_centerHorizontal="true" />
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
 </RelativeLayout>
 

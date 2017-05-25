@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KPNavaneet_Saarang_Android.iml" filepath="$PROJECT_DIR$/KPNavaneet_Saarang_Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pref1.iml" filepath="$PROJECT_DIR$/pref1.iml" />
     </modules>
   </component>
 </project>

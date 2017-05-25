@@ -41,8 +41,26 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         TextView text= (TextView) rowview.findViewById(R.id.text);
         text.setText(string.get(position));
         ImageView image = (ImageView) rowview.findViewById(R.id.image);
-        if(string.get(position)!="Nothing to show")
-        image.setImageResource(R.drawable.images);
+        if(string.size()!=1)
+        {
+            switch(string.get(position))
+            {
+                case "Buzzer Quiz":image.setImageResource(R.drawable.buz);
+                                    break;
+               case "India Quiz":image.setImageResource(R.drawable.india);
+                    break;
+                case "Cornucopia":image.setImageResource(R.drawable.corn);
+                    break;
+                case "Rangrez":image.setImageResource(R.drawable.rang);
+                    break;
+                case "FIFA tournament":image.setImageResource(R.drawable.fifa);
+                    break;
+                case "DOTA 2 tournament":image.setImageResource(R.drawable.dota);
+                    break;
+
+
+            }
+        }
         return rowview;
     }
 }
