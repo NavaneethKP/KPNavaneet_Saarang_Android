@@ -1,6 +1,7 @@
 package com.example.kpn.kpnavaneet_saarang_android;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,13 +29,54 @@ public class events extends AppCompatActivity {
        //Getting the values for details from list events activity .
 
         Intent i = getIntent();
-        eventname = i.getStringArrayListExtra("eventname");
-        category = i.getStringArrayListExtra("category");
-        des = i.getStringArrayListExtra("description");
-        sch =i.getStringArrayListExtra("schedule");
-        loc=i.getStringArrayListExtra("location");
-        contact = i.getStringArrayListExtra("contact");
-        ph = i.getStringArrayListExtra("phone");
+        SharedPreferences settings = events.this.getSharedPreferences("PREFS",0);
+        String events_name=settings.getString("events","");
+        String[] events = events_name.split(",");
+        for(int x=0;x<events.length;x++)
+        {
+            eventname.add(events[x]);
+        }
+
+        String category_name=settings.getString("category","");
+        String[] categories = category_name.split(",");
+        for(int x=0;x<categories.length;x++)
+        {
+            category.add(categories[x]);
+        }
+        String description_name=settings.getString("description","");
+        String[] descriptions = description_name.split(",");
+        for(int x=0;x<descriptions.length;x++)
+        {
+            des.add(descriptions[x]);
+        }
+
+        String schedule_name=settings.getString("schedule","");
+        String[] schedule = schedule_name.split(",");
+        for(int x=0;x<schedule.length;x++)
+        {
+            sch.add(schedule[x]);
+        }
+
+        String location_name=settings.getString("location","");
+        String[] locations = location_name.split(",");
+        for(int x=0;x<locations.length;x++)
+        {
+            loc.add(locations[x]);
+        }
+
+        String contact_name=settings.getString("contact","");
+        String[] contacts = contact_name.split(",");
+        for(int x=0;x<contacts.length;x++)
+        {
+            contact.add(contacts[x]);
+        }
+
+        String ph_name=settings.getString("phone","");
+        String[] phones = ph_name.split(",");
+        for(int x=0;x<phones.length;x++)
+        {
+            ph.add(phones[x]);
+        }
 
         //Adapter used to convert the eventname and image into a list item .
 

@@ -17,13 +17,13 @@ import java.util.List;
 
 public class CustomListAdapter extends ArrayAdapter<String> {
 
-    ArrayList<String> string = new ArrayList<String>();
+    ArrayList<String> string;
     private final Context context;
 
 
 //Constructor for the class .
 
-    public CustomListAdapter(@NonNull Context context, @LayoutRes int resource,ArrayList string) {
+    public CustomListAdapter(@NonNull Context context, @LayoutRes int resource,ArrayList<String> string) {
         super(context, resource,string);
         this.context=context;
         this.string=string;
