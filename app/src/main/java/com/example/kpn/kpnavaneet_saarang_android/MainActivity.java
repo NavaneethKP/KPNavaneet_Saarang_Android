@@ -29,16 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Integer flag=0;
 
+        Integer flag=0;
         Intent j= getIntent();
-        flag = j.getIntExtra("flag",0);
-        super.onCreate(savedInstanceState);
+        flag = j.getIntExtra("flag",0);      //flag changed to 1 if received intent from events list
+        super.onCreate(savedInstanceState);  // to change preference
         setContentView(R.layout.activity_main);
 
         SharedPreferences settings = this.getSharedPreferences("PREFS",0);
         if(settings.getString("saved","")!="" && flag==0)
         {
+            //Goes to the events list activity if a shared[reference exist.
+
             Intent i = new Intent(this,events.class);
             startActivity(i);
             finish();
@@ -55,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
         if(string.isEmpty())
             string.add("Nothing to show");
 
+        //saveprefs() method called to save all the data to SharedPreferences and goes to events list activity.
+
         saveprefs();
-        Toast.makeText(this,"Saved Preferance",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Preferences Saved",Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this,events.class);
         startActivity(i);
         finish();
@@ -160,6 +164,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    //Method to save all the preferences
 
     public void saveprefs()
     {

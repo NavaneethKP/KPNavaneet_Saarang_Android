@@ -11,14 +11,14 @@
         android:id="@+id/eventstext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
         android:padding="20dp"
         android:text="@string/events"
-        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginStart="23dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:textStyle="bold" />
 
     <ListView
         android:layout_width="wrap_content"

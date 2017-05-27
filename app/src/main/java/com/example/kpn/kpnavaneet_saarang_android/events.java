@@ -26,7 +26,7 @@ public class events extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-       //Getting the values for details from list events activity .
+       //Getting the values for details from sharedPreferences
 
         Intent i = getIntent();
         SharedPreferences settings = events.this.getSharedPreferences("PREFS",0);
@@ -113,11 +113,15 @@ public class events extends AppCompatActivity {
 
     }
 
+    //onCLick method for the button to go to the MainActivity
+    //and allows to change the categories preferred.
+
     public void change(View view)
     {
         Intent i = new Intent(events.this,MainActivity.class);
         i.putExtra("flag",1);
         startActivity(i);
+        finish();
     }
 
 }

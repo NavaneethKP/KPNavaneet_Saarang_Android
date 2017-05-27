@@ -23,7 +23,7 @@ public class details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        //Intent from class mainActivity that displays the details of the event.
+        //Intent from class events that displays the details of the event.
 
         final Intent i = getIntent();
         Bundle b = i.getExtras();
@@ -125,7 +125,7 @@ public class details extends AppCompatActivity {
     }
 
     //onClick method for the Register button
-    //on clicking button goes to another activity .
+    //on clicking button goes to a registration form.
 
     public void register(View view)
     {
