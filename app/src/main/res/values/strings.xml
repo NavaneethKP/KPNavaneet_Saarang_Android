@@ -6,16 +6,16 @@
     <string name="Buzzer">Is lightning-speed pouncing your thing?
         Or perhaps edging out a rival team in a matter of seconds?
         If your answer is a yes leave aside all other pressing issues
-        and get ready to pounce, \'cause Saarang Buzzer Quiz is a\'beckonin! </string>
+        and get ready to pounce\'cause Saarang Buzzer Quiz is a\'beckonin! </string>
 
-    <string name="India">The India Quiz is one of Saarang\'s
+    <string name="India">The India Quiz is one of Saarang \'s
         most awaited events. Join us as we wind our way through
         the myriad peoples and cultures across the length and breadth
         of the wonder that is India. A quiz about anything Indian. </string>
 
     <string name="Cornucopia"> You may have participated in craft events like greeting card making or doll
         making or maybe even best out of waste.
-        Here we ask you to think a little out of the box... literally! So here\'s the deal
+        Here we ask you to think a little out of the box… literally! So here\'s the deal
         there will be two "secret ingredients" (hopefully in a box Masterchef anyone?) and you guys
         have to make a piece (read: work of art) with either or both of those "ingredients" as
         the main elements. Easy peasy right? Well when we ask you to make a piece it can literally be anything
@@ -51,4 +51,5 @@
     <string name="ph6">967741567</string>
     <string name="events">EVENTS</string>
     <string name="change">CHANGE PREFERENCE</string>
+    <string name="Button">CHANGE PREFERENCE</string>
 </resources>

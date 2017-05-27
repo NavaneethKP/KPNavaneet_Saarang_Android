@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,15 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Integer flag=0;
+
+        Intent j= getIntent();
+        flag = j.getIntExtra("flag",0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         SharedPreferences settings = this.getSharedPreferences("PREFS",0);
-        if(settings.getString("saved","")!="")
+        if(settings.getString("saved","")!="" && flag==0)
         {
             Intent i = new Intent(this,events.class);
             startActivity(i);
-            Log.i("com.example.kpn.kpnavaneet_saarang_android","called");
             finish();
 
         }
@@ -52,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             string.add("Nothing to show");
 
         saveprefs();
+        Toast.makeText(this,"Saved Preferance",Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this,events.class);
         startActivity(i);
         finish();

@@ -32,50 +32,44 @@ public class events extends AppCompatActivity {
         SharedPreferences settings = events.this.getSharedPreferences("PREFS",0);
         String events_name=settings.getString("events","");
         String[] events = events_name.split(",");
-        for(int x=0;x<events.length;x++)
-        {
-            eventname.add(events[x]);
+        for (String event : events) {
+            eventname.add(event);
         }
 
         String category_name=settings.getString("category","");
         String[] categories = category_name.split(",");
-        for(int x=0;x<categories.length;x++)
-        {
-            category.add(categories[x]);
+        for (String category1 : categories) {
+            category.add(category1);
         }
+
         String description_name=settings.getString("description","");
         String[] descriptions = description_name.split(",");
-        for(int x=0;x<descriptions.length;x++)
-        {
-            des.add(descriptions[x]);
+        for (String description : descriptions) {
+            des.add(description);
         }
 
         String schedule_name=settings.getString("schedule","");
         String[] schedule = schedule_name.split(",");
-        for(int x=0;x<schedule.length;x++)
-        {
-            sch.add(schedule[x]);
+        for (String aSchedule : schedule) {
+            sch.add(aSchedule);
         }
 
         String location_name=settings.getString("location","");
         String[] locations = location_name.split(",");
-        for(int x=0;x<locations.length;x++)
-        {
-            loc.add(locations[x]);
+        for (String location : locations) {
+            loc.add(location);
         }
 
         String contact_name=settings.getString("contact","");
         String[] contacts = contact_name.split(",");
-        for(int x=0;x<contacts.length;x++)
-        {
-            contact.add(contacts[x]);
+        for (String contact1 : contacts) {
+            contact.add(contact1);
         }
 
         String ph_name=settings.getString("phone","");
         String[] phones = ph_name.split(",");
-        for(int x=0;x<phones.length;x++)
-        {
-            ph.add(phones[x]);
+        for (String phone : phones) {
+            ph.add(phone);
         }
 
         //Adapter used to convert the eventname and image into a list item .
@@ -118,4 +112,12 @@ public class events extends AppCompatActivity {
 
 
     }
+
+    public void change(View view)
+    {
+        Intent i = new Intent(events.this,MainActivity.class);
+        i.putExtra("flag",1);
+        startActivity(i);
+    }
+
 }
