@@ -29,48 +29,16 @@ public class events extends AppCompatActivity {
        //Getting the values for details from sharedPreferences
 
         Intent i = getIntent();
-        SharedPreferences settings = events.this.getSharedPreferences("PREFS",0);
-        String events_name=settings.getString("events","");
-        String[] events = events_name.split(",");
-        for (String event : events) {
-            eventname.add(event);
-        }
 
-        String category_name=settings.getString("category","");
-        String[] categories = category_name.split(",");
-        for (String category1 : categories) {
-            category.add(category1);
-        }
+        //Calling function getpref () to getpreferences
 
-        String description_name=settings.getString("description","");
-        String[] descriptions = description_name.split(",");
-        for (String description : descriptions) {
-            des.add(description);
-        }
-
-        String schedule_name=settings.getString("schedule","");
-        String[] schedule = schedule_name.split(",");
-        for (String aSchedule : schedule) {
-            sch.add(aSchedule);
-        }
-
-        String location_name=settings.getString("location","");
-        String[] locations = location_name.split(",");
-        for (String location : locations) {
-            loc.add(location);
-        }
-
-        String contact_name=settings.getString("contact","");
-        String[] contacts = contact_name.split(",");
-        for (String contact1 : contacts) {
-            contact.add(contact1);
-        }
-
-        String ph_name=settings.getString("phone","");
-        String[] phones = ph_name.split(",");
-        for (String phone : phones) {
-            ph.add(phone);
-        }
+        eventname=getpref("events",eventname);
+        category=getpref("category",category);
+        des= getpref("description",des);
+        sch=getpref("schedule",sch);
+        loc=getpref("location",loc);
+        contact=getpref("contact",contact);
+        ph=getpref("phone",ph);
 
         //Adapter used to convert the eventname and image into a list item .
 
@@ -122,6 +90,20 @@ public class events extends AppCompatActivity {
         i.putExtra("flag",1);
         startActivity(i);
         finish();
+    }
+
+    //New method created to get preferences using SharedPreferences
+
+    public ArrayList<String> getpref(String key,ArrayList<String> list)
+    {
+        SharedPreferences settings = events.this.getSharedPreferences("PREFS",0);
+        String string = settings.getString(key,"");
+        String[] strings=string.split(",");
+        for(String newstring : strings)
+        {
+            list.add(newstring);
+        }
+        return list;
     }
 
 }

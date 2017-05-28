@@ -210,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
             stringBuilder7.append(s7);
             stringBuilder7.append(",");
         }
+
         SharedPreferences settings = this.getSharedPreferences("PREFS",0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("saved","saved");
